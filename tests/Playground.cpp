@@ -1,6 +1,5 @@
 #include <iostream>
 
-#include "../src/include/Probability.hpp"
 #include "../src/RandomGenerators.hpp"
 
 int main() {

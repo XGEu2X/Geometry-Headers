@@ -6,6 +6,9 @@
 #include "pcg_random.hpp"
 #include "pcg_extras.hpp"
 
+#ifndef Probability_GUARD
+#define Probability_GUARD
+
 /**
 * @brief Returns true with probability p and false with probability 1-p
 * @return true or false according to probability p, which must be a number
@@ -52,3 +55,4 @@ FloatType random_real(FloatType from, FloatType upto)
 	return d(randomEngine, parm_t{ from, upto });
 }
 
+#endif

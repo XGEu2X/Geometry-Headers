@@ -12,6 +12,9 @@ namespace Geometry{
 		using Diff = std::pair<double, Transposition>;
 		using DiffList = std::vector<Diff>;
 
+		//Evolutive Algorithms compatibility
+		using settler_type = point;
+
 		PointSet() :S(0) {}
 
 		inline typename std::vector<point>::iterator begin() { return S.begin(); }
@@ -53,6 +56,14 @@ namespace Geometry{
 				}
 			);
 			return result;
+		}
+		void sort_by_value(const unsigned int orderType = ORDER_ASCENDENT) {
+			std::sort(S.begin(), S.end(), [orderType](const point& p1, const point& p2) {
+				bool result = false;
+				if (orderType == ORDER_ASCENDENT) { result = p1.get_value() < p2.get_value(); }
+				if (orderType == ORDER_DESCENDENT) { result = p1.get_value() > p2.get_value(); }
+				return result;
+			});
 		}
 
 		DiffList get_diff_list() const {

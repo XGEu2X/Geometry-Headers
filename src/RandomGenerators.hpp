@@ -1,7 +1,7 @@
 #pragma once
 
 #include "PointSet.hpp"
-#include "include/Probability.hpp"
+#include "Probability-Headers/Probability.hpp"
 
 const double Pi = 3.14159265358979323846;
 
@@ -59,6 +59,11 @@ namespace Geometry {
 		pointSet born(const size_t i) const {
 			pointSet result;
 			for (size_t c1 = 0; c1 < i; ++c1) { result.push_back(born()); }
+			return result;
+		}
+		point project( const point& p) const { 
+			point result = p;
+			if (result.norm() >= r)result = (r-DBL_EPSILON) * p.normalized();
 			return result;
 		}
 	private:
