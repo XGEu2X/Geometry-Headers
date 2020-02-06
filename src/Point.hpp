@@ -11,10 +11,10 @@ namespace Geometry {
 		Point(const size_t dim) :V(dim), value(NO_VALUE) {}
 		Point(const std::vector<Scalar>& _V) :V(_V), value(NO_VALUE) {}
 
-		inline typename std::vector<Scalar>::iterator begin() { V.begin(); }
-		inline typename std::vector<Scalar>::const_iterator begin() const { V.begin(); }
-		inline typename std::vector<Scalar>::iterator end() { V.end(); }
-		inline typename std::vector<Scalar>::const_iterator end() const { V.end(); }
+		inline typename std::vector<Scalar>::iterator begin() { return V.begin(); }
+		inline typename std::vector<Scalar>::const_iterator begin() const { return V.begin(); }
+		inline typename std::vector<Scalar>::iterator end() { return V.end(); }
+		inline typename std::vector<Scalar>::const_iterator end() const { return V.end(); }
 		inline typename std::vector<Scalar>::value_type& operator[](const size_t i) { return V[i]; }
 		inline typename std::vector<Scalar>::value_type operator[](const size_t i) const { return V[i]; }
 

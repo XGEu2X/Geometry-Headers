@@ -14,10 +14,10 @@ namespace Geometry{
 
 		PointSet() :S(0) {}
 
-		inline typename std::vector<point>::iterator begin() { S.begin(); }
-		inline typename std::vector<point>::const_iterator begin() const { S.begin(); }
-		inline typename std::vector<point>::iterator end() { S.end(); }
-		inline typename std::vector<point>::const_iterator end() const { S.end(); }
+		inline typename std::vector<point>::iterator begin() { return S.begin(); }
+		inline typename std::vector<point>::const_iterator begin() const { return S.begin(); }
+		inline typename std::vector<point>::iterator end() { return S.end(); }
+		inline typename std::vector<point>::const_iterator end() const { return S.end(); }
 		inline typename std::vector<point>::value_type& operator[](const size_t i) { return S[i]; }
 		inline typename std::vector<point>::value_type operator[](const size_t i) const { return S[i]; }
 
