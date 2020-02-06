@@ -17,3 +17,5 @@ macro(package_add_test TESTNAME)
 endmacro()
 
 package_add_test(Geometry Geometry.cpp)
+
+add_executable(Playground Playground.cpp)
