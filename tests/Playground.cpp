@@ -8,8 +8,8 @@ int main() {
 	std::cout << d << std::endl;
 
 	Geometry::Circle RC;
-	Geometry::Point p = RC.born();
+	Geometry::PointSet P = RC.born(10);
 
-	std::cout << p.to_string();
+	std::cout << P.to_string();
 
 }
