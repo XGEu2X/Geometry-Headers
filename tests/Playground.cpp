@@ -2,14 +2,13 @@
 
 #include "../src/RandomGenerators.hpp"
 
+using namespace Geometry;
+
 int main() {
-	double d = random_real(0.0, 10.0);
-	
-	std::cout << d << std::endl;
-
-	Geometry::Circle RC;
-	Geometry::PointSet P = RC.born(10);
-
-	std::cout << P.to_string();
-
+	CirclePointSet Generator(5);
+	std::vector<Circle::pointSet> L = Generator.born(10, 5);
+	for (Circle::pointSet P : L) {
+		std::cout << P.to_string() << std::endl;
+	}
+	return 0;
 }

@@ -69,7 +69,40 @@ namespace Geometry {
 	private:
 	public:
 		inline const static double DEFAULT_RADIUS = 1;
-	private:
+	protected:
 		double r;
+	};
+
+	class CirclePointSet : public Circle {
+	public:
+		using point = Point<double>;
+		using pointSet = PointSet<point>;
+
+		CirclePointSet(const double _r = DEFAULT_RADIUS) {
+			r = _r;
+		}
+
+		pointSet born( const size_t amount) const {
+			Circle Generator(r);
+			return Generator.born(amount);
+		}
+		std::vector<pointSet> born(const size_t amount, const size_t i) const {
+			std::vector<pointSet> result;
+			for (size_t c1 = 0; c1 < i; ++c1) {
+				result.push_back(born(amount));
+			}
+			return result;
+		}
+		pointSet project(const pointSet& P) const {
+			pointSet result = P;
+			Circle Generator(r);
+			for (point& p : result) {
+				p = Generator.project(p);
+			}
+			return result;
+		}
+	private:
+	public:
+	private:
 	};
 }
