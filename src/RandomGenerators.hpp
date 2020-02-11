@@ -78,18 +78,18 @@ namespace Geometry {
 		using point = Point<double>;
 		using pointSet = PointSet<point>;
 
-		CirclePointSet(const double _r = DEFAULT_RADIUS) {
+		CirclePointSet(const size_t _amount = DEFAULT_AMOUNT, const double _r = DEFAULT_RADIUS): amount(_amount) {
 			r = _r;
 		}
 
-		pointSet born( const size_t amount) const {
+		pointSet born() const {
 			Circle Generator(r);
 			return Generator.born(amount);
 		}
-		std::vector<pointSet> born(const size_t amount, const size_t i) const {
+		std::vector<pointSet> born(const size_t i) const {
 			std::vector<pointSet> result;
 			for (size_t c1 = 0; c1 < i; ++c1) {
-				result.push_back(born(amount));
+				result.push_back(born());
 			}
 			return result;
 		}
@@ -103,6 +103,8 @@ namespace Geometry {
 		}
 	private:
 	public:
+		inline static const size_t DEFAULT_AMOUNT = 20;
 	private:
+		size_t amount;
 	};
 }

@@ -13,7 +13,7 @@ namespace Geometry{
 		using DiffList = std::vector<Diff>;
 
 		//Evolutive Algorithms compatibility
-		using settler_type = point;
+		using value_type = point;
 
 		PointSet() :S(0), value(NO_VALUE) {}
 
