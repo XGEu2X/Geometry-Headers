@@ -3,6 +3,8 @@
 #include "PointSet.hpp"
 #include "Probability/Probability.hpp"
 
+#include <cfloat>
+
 const double Pi = 3.14159265358979323846;
 
 namespace Geometry {
